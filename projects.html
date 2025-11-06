@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — Venkata Sai Ram</title>
+    <meta
+      name="description"
+      content="Projects by Venkata Sai Ram — FoodOrder, Restaurant Landing, WoodCraft Showcase"
+    />
+
+    <style>
+      :root {
+        --accent: #0b63d6;
+        --muted: #6b7080;
+        --card: #fbfdff;
+        --shadow: 0 8px 22px rgba(16, 24, 40, 0.06);
+        --maxw: 1100px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+        background: linear-gradient(180deg, #fff, #f7fbff);
+        color: #0f1720;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px;
+      }
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .logo {
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+      }
+      nav {
+        display: flex;
+        gap: 14px;
+      }
+      nav a {
+        color: #233;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+      nav a.active {
+        background: var(--accent);
+        color: #fff;
+      }
+      .project-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-top: 16px;
+      }
+      .project {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        border: 1px solid #eef6ff;
+      }
+      .project h3 {
+        margin: 0;
+      }
+      .project .meta {
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .project .tags {
+        margin-top: 8px;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .tag {
+        background: #fff;
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid #eef3fb;
+      }
+      footer {
+        margin-top: 28px;
+        text-align: center;
+        color: var(--muted);
+        padding-bottom: 28px;
+      }
+      @media (min-width: 900px) {
+        .project-list {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .fade {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.5s, transform 0.45s;
+      }
+      .fade.show {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="logo" href="index.html">Venkata Sai Ram</a>
+        <nav id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html" class="active">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuBtn">☰</button>
+      </header>
+
+      <main>
+        <h1 style="margin-top: 10px">Projects</h1>
+        <p class="muted" style="margin-top: 6px">
+          Selected work — brief descriptions and tech used.
+        </p>
+
+        <section class="project-list">
+          <article id="foodorder" class="project fade">
+            <h3>FoodOrder — Responsive Ordering UI</h3>
+            <p class="meta">Role: UI Developer • Tech: HTML, CSS, JavaScript</p>
+            <p style="margin-top: 8px">
+              Built the UI for a food-ordering front-end: responsive menu grid,
+              category filters, accessible checkout flow, and SEO-friendly
+              markup optimized for performance.
+            </p>
+            <div class="tags" style="margin-top: 10px">
+              <span class="tag">Responsive</span
+              ><span class="tag">Accessibility</span
+              ><span class="tag">SEO</span>
+            </div>
+          </article>
+
+          <article id="restaurant" class="project fade">
+            <h3>Restaurant Landing & Reservation</h3>
+            <p class="meta">Role: UI Developer • Tech: React.js, HTML, CSS</p>
+            <p style="margin-top: 8px">
+              Design and implementation of a landing page with hero, gallery,
+              and a reservation form integrated with backend endpoints. Focus on
+              mobile-first design and fast load times.
+            </p>
+            <div class="tags" style="margin-top: 10px">
+              <span class="tag">React.js</span><span class="tag">Forms</span
+              ><span class="tag">Performance</span>
+            </div>
+          </article>
+
+          <article id="woodcraft" class="project fade">
+            <h3>WoodCraft Showcase</h3>
+            <p class="meta">
+              Role: UI Developer • Tech: React.js, Core Java (backend)
+            </p>
+            <p style="margin-top: 8px">
+              Showcase site for woodworking products with product filtering,
+              API-driven content and SEO-friendly templates. Worked closely with
+              backend team to wire product data and search.
+            </p>
+            <div class="tags" style="margin-top: 10px">
+              <span class="tag">API Integration</span
+              ><span class="tag">Product Filter</span
+              ><span class="tag">SEO</span>
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <footer>© 2025 Venkata Sai Ram Chaganti</footer>
+    </div>
+
+    <script>
+      (function () {
+        const btn = document.getElementById("menuBtn");
+        const nav = document.getElementById("mainNav");
+        if (btn)
+          btn.addEventListener("click", () => {
+            if (nav.style.display === "flex") nav.style.display = "";
+            else {
+              nav.style.display = "flex";
+              nav.style.flexDirection = "column";
+              nav.style.position = "absolute";
+              nav.style.right = "28px";
+              nav.style.top = "60px";
+              nav.style.background = "#fff";
+              nav.style.padding = "10px";
+              nav.style.boxShadow = "0 8px 24px rgba(16,24,40,0.08)";
+            }
+          });
+
+        // reveal
+        const els = document.querySelectorAll(".fade");
+        setTimeout(
+          () =>
+            els.forEach((e, i) =>
+              setTimeout(() => e.classList.add("show"), i * 80)
+            ),
+          150
+        );
+      })();
+    </script>
+  </body>
+</html>

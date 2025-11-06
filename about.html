@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Venkata Sai Ram</title>
+    <meta
+      name="description"
+      content="About Venkata Sai Ram — UI Developer. Experience, education, skills and achievements."
+    />
+
+    <style>
+      :root {
+        --accent: #0b63d6;
+        --muted: #6b7080;
+        --card: #fbfdff;
+        --shadow: 0 8px 22px rgba(16, 24, 40, 0.06);
+        --radius: 12px;
+        --maxw: 1100px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Segoe UI, Roboto, Arial;
+        background: linear-gradient(180deg, #fff, #f7fbff);
+        color: #0f1720;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px;
+      }
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 0;
+      }
+      .logo {
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+      }
+      nav {
+        display: flex;
+        gap: 14px;
+      }
+      nav a {
+        color: #233;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+      }
+      nav a.active {
+        background: var(--accent);
+        color: #fff;
+      }
+      .menu-toggle {
+        display: none;
+      }
+      .hero {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-top: 16px;
+        flex-wrap: wrap;
+      }
+      .photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 6px;
+  object-fit: contain;
+  object-position: center top;
+  border: 1px solid #eef6ff;
+  background: #e9f2ff;
+  display: block;
+}
+
+      .card {
+        background: var(--card);
+        padding: 18px;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+      }
+      .section {
+        margin-top: 18px;
+      }
+      h1,
+      h2 {
+        margin: 0;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 18px;
+      }
+      @media (max-width: 900px) {
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        nav {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+      .skill-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .badge {
+        background: #fff;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #eef3fb;
+      }
+      footer {
+        margin-top: 28px;
+        text-align: center;
+        color: var(--muted);
+        padding-bottom: 28px;
+      }
+      /* fade animation */
+      .fade {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.5s ease, transform 0.45s ease;
+      }
+      .fade.show {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="logo" href="index.html">Venkata Sai Ram</a>
+        <nav id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html" class="active">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuBtn">☰</button>
+      </header>
+
+      <main>
+        <section class="hero fade">
+          <!-- Left: content -->
+          <div style="flex: 1">
+            <h1>About Me</h1>
+            <p class="muted" style="margin-top: 8px">
+              I’m <strong>Venkata Sai Ram Chaganti</strong>, a UI Developer with
+              1+ years of professional experience building responsive websites
+              for international clients. I translate client requirements into
+              polished, accessible UI, collaborate with backend teams, and
+              ensure fast, SEO-friendly sites.
+            </p>
+
+            <div class="section card" style="margin-top: 14px">
+              <h2 style="font-size: 1.05rem; margin-bottom: 8px">
+                Professional Experience
+              </h2>
+              <div style="margin-top: 6px">
+                <strong>UI Developer</strong><br />
+                <span class="muted"
+                  >Scintillate Informatics Pvt. Ltd., Hyderabad — June 2024 –
+                  Present</span
+                >
+                <ul style="margin-top: 8px">
+                  <li>
+                    Designed & deployed responsive websites for German clients
+                    in Food, Restaurant & Woodwork domains.
+                  </li>
+                  <li>
+                    Built accessible, mobile-first UIs and improved SEO and
+                    performance.
+                  </li>
+                  <li>
+                    Collaborated with backend teams to integrate REST APIs; used
+                    Git and Agile workflows.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="section card">
+              <h2 style="font-size: 1.05rem; margin-bottom: 8px">Education</h2>
+              <ul class="muted">
+                <li>
+                  B.Tech, Computer Science Engineering – JNTU Kakinada | CGPA:
+                  7.0
+                </li>
+                <li>
+                  Intermediate (MPC) – Aditya Junior College, Narasapur | 89%
+                </li>
+                <li>SSC – Aditya School, Narasapur | 82%</li>
+              </ul>
+            </div>
+
+            <div class="section card">
+              <h2 style="font-size: 1.05rem; margin-bottom: 8px">
+                Achievements & Training
+              </h2>
+              <ul class="muted">
+                <li>
+                  Delivered multiple international websites with positive client
+                  feedback.
+                </li>
+                <li>Completed 45-day intensive UI Development training.</li>
+                <li>Strong client coordination & communication skills.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right: photo + skills -->
+          <aside style="width: 320px">
+           <img
+  class="photo"
+  alt="profile"
+  src=" C:\Resume\Portfolio\Ram.jpg" width="100%" height="100%"><rect width="100%" height="100%" fill="%23e9f2ff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="36" fill="%230b63d6">Photo</text></svg>'
+/>
+
+            <div class="card" style="margin-top: 12px">
+              <h3 style="margin: 0">Core Competencies</h3>
+              <div class="skill-badges">
+                <span class="badge">HTML</span>
+                <span class="badge">CSS</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">React.js</span>
+                <span class="badge">Core Java</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">MySQL</span>
+              </div>
+            </div>
+
+            <div class="card" style="margin-top: 12px">
+              <h3 style="margin: 0">Hobbies</h3>
+              <p class="muted" style="margin-top: 8px">
+                Playing Cricket, Reading Manga
+              </p>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer>© 2025 Venkata Sai Ram Chaganti</footer>
+    </div>
+
+    <script>
+      // small menu for mobile
+      (function () {
+        const btn = document.getElementById("menuBtn");
+        const nav = document.getElementById("mainNav");
+        btn.addEventListener("click", () => {
+          if (nav.style.display === "flex") {
+            nav.style.display = "";
+          } else {
+            nav.style.display = "flex";
+            nav.style.flexDirection = "column";
+            nav.style.position = "absolute";
+            nav.style.right = "28px";
+            nav.style.top = "60px";
+            nav.style.background = "#fff";
+            nav.style.padding = "10px";
+            nav.style.boxShadow = "0 8px 24px rgba(16,24,40,0.08)";
+          }
+        });
+      })();
+
+      // reveal on load
+      (function () {
+        document
+          .querySelectorAll(".fade")
+          .forEach((el) => setTimeout(() => el.classList.add("show"), 120));
+      })();
+    </script>
+  </body>
+</html>

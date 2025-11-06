@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Venkata Sai Ram</title>
+  <meta name="description" content="Contact Venkata Sai Ram — email & form" />
+
+  <style>
+    :root{--accent:#0b63d6;--muted:#6b7080;--card:#fbfdff;--shadow:0 8px 22px rgba(16,24,40,0.06);--maxw:1100px}
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#fff,#f7fbff);color:#0f1720}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:28px}
+    .site-header{display:flex;align-items:center;justify-content:space-between;padding:10px 0}
+    .logo{font-weight:700;color:var(--accent);text-decoration:none}
+    nav{display:flex;gap:14px}
+    nav a{color:#233;text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a.active{background:var(--accent);color:#fff}
+    .grid{display:grid;grid-template-columns:1fr 400px;gap:18px;margin-top:16px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr} nav{display:none}.menu-toggle{display:block}}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid #eef6ff}
+    label{display:block;margin-top:10px;font-weight:600}
+    input,textarea{width:100%;padding:10px;margin-top:6px;border-radius:8px;border:1px solid #e7eefc;font-size:0.98rem}
+    .btn{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+    .muted{color:var(--muted)}
+    footer{margin-top:28px;text-align:center;color:var(--muted);padding-bottom:28px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="logo" href="index.html">Venkata Sai Ram</a>
+      <nav id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuBtn">☰</button>
+    </header>
+
+    <main>
+      <h1 style="margin-top:8px">Contact</h1>
+      <p class="muted" style="margin-top:6px">Send a message or email directly — I'll get back to you soon.</p>
+
+      <section class="grid">
+        <div>
+          <div class="card">
+            <h3 style="margin:0">Send a message</h3>
+            <form id="contactForm">
+              <label for="name">Name</label>
+              <input id="name" name="name" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+
+              <button class="btn" type="submit">Open email app</button>
+              <p id="hint" class="muted" style="margin-top:8px">This form opens your email client with the message (uses <code>mailto:</code>).</p>
+            </form>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h3 style="margin:0 0 8px 0">Contact Info</h3>
+            <p class="muted" style="margin:0">📍 Narasapur, Andhra Pradesh, India</p>
+            <p class="muted" style="margin:6px 0 0 0">📱 +91 99484 35107</p>
+            <p style="margin:6px 0 0 0">✉️ <a href="mailto:venkatasairamchaganti@gmail.com">venkatasairamchaganti@gmail.com</a></p>
+            <p style="margin:6px 0 0 0">🔗 <a href="https://linkedin.com/in/venkatasairamchaganti" target="_blank">linkedin.com/in/venkatasairamchaganti</a></p>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h3 style="margin:0 0 8px 0">Availability</h3>
+            <p class="muted" style="margin:0">Open to UI/front-end roles and freelance projects.</p>
+          </div>
+        </aside>
+      </section>
+
+    </main>
+
+    <footer>
+      © 2025 Venkata Sai Ram Chaganti
+    </footer>
+  </div>
+
+  <script>
+    // menu toggle for mobile
+    (function(){
+      const btn = document.getElementById('menuBtn');
+      const nav = document.getElementById('mainNav');
+      if(btn) btn.addEventListener('click', ()=> {
+        if(nav.style.display === 'flex') nav.style.display = '';
+        else { nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.position = 'absolute'; nav.style.right = '28px'; nav.style.top = '60px'; nav.style.background = '#fff'; nav.style.padding = '10px'; nav.style.boxShadow = '0 8px 24px rgba(16,24,40,0.08)'; }
+      });
+    })();
+
+    // mailto form
+    (function(){
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = encodeURIComponent(document.getElementById('name').value.trim());
+        const email = encodeURIComponent(document.getElementById('email').value.trim());
+        const message = encodeURIComponent(document.getElementById('message').value.trim());
+        const subject = encodeURIComponent('Portfolio inquiry from ' + name);
+        const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+        const mail = 'mailto:venkatasairamchaganti@gmail.com?subject=' + subject + '&body=' + body;
+        window.location.href = mail;
+      });
+    })();
+  </script>
+</body>
+</html>

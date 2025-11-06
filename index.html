@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Venkata Sai Ram — UI Developer</title>
+    <meta
+      name="description"
+      content="Venkata Sai Ram — UI Developer (HTML, CSS, JS, React) • Core Java & Spring Boot. Portfolio."
+    />
+
+    <style>
+      :root {
+        --accent: #0b63d6;
+        --bg: #ffffff;
+        --muted: #6b7080;
+        --maxw: 1100px;
+        --card: #fbfdff;
+        --shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+        --radius: 12px;
+        --gap: 18px;
+        --text: #0f1720;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Segoe UI, Roboto, "Helvetica Neue", Arial;
+        color: var(--text);
+        background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 28px;
+      }
+      /* Header */
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+        background: transparent;
+        backdrop-filter: blur(6px);
+        z-index: 40;
+      }
+      .logo {
+        font-weight: 700;
+        color: var(--accent);
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+      nav {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      nav a {
+        color: #233;
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-weight: 500;
+      }
+      nav a:hover {
+        background: rgba(11, 99, 214, 0.08);
+      }
+      nav a.active {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: var(--shadow);
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: 0;
+        font-size: 20px;
+      }
+      /* Hero */
+      .hero {
+        display: grid;
+        grid-template-columns: 1fr 360px;
+        gap: 28px;
+        align-items: start;
+        margin-top: 18px;
+      }
+      .hero-left h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+      .accent {
+        color: var(--accent);
+      }
+      .lead {
+        color: var(--muted);
+        margin-top: 10px;
+        font-size: 1.05rem;
+      }
+      .contact-inline {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 18px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        box-shadow: 0 6px 14px rgba(11, 99, 214, 0.12);
+        transition: transform 0.18s ease, box-shadow 0.18s;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+      }
+      .btn.ghost {
+        background: transparent;
+        border: 1px solid #e6eefc;
+        color: var(--accent);
+        box-shadow: none;
+      }
+      /* Card */
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        padding: 18px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill {
+        background: #fff;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #eef3fb;
+        font-size: 0.92rem;
+      }
+      /* Right column */
+      .summary-card h3 {
+        margin: 0 0 10px 0;
+      }
+      /* Projects grid */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .project-card {
+        padding: 14px;
+        border-radius: 12px;
+        background: #fff;
+        border: 1px solid #f0f4ff;
+        transition: transform 0.18s, box-shadow 0.18s;
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      /* Footer */
+      footer {
+        margin-top: 28px;
+        padding: 18px 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+      /* Responsive */
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-right {
+          order: 2;
+        }
+        nav {
+          display: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+      }
+      /* small */
+      @media (max-width: 520px) {
+        .hero-left h1 {
+          font-size: 1.6rem;
+        }
+        .lead {
+          font-size: 1rem;
+        }
+      }
+
+      /* small animation utilities */
+      .fade-up {
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-up.show {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="logo" href="index.html">Venkata Sai Ram</a>
+
+        <nav id="mainNav">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" id="menuBtn" aria-label="menu">☰</button>
+      </header>
+
+      <main>
+        <section class="hero">
+          <!-- left -->
+          <div class="hero-left fade-up">
+            <h1>Hi, I’m <span class="accent">Venkata Sai Ram</span></h1>
+            <p class="lead">
+              UI Developer with 1+ years building responsive websites for
+              international clients (Germany) — Food, Restaurant & Woodwork
+              domains. Skilled in HTML, CSS, JavaScript, React.js and backend
+              basics with Core Java & Spring Boot.
+            </p>
+
+            <ul class="contact-inline">
+              <li>📍 Narasapur, Andhra Pradesh</li>
+              <li>📱 +91 99484 35107</li>
+              <li>
+                ✉️
+                <a href="mailto:venkatasairamchaganti@gmail.com"
+                  >venkatasairamchaganti@gmail.com</a
+                >
+              </li>
+              <li>
+                🔗
+                <a
+                  href="https://linkedin.com/in/venkatasairamchaganti"
+                  target="_blank"
+                  >linkedin.com/in/venkatasairamchaganti</a
+                >
+              </li>
+            </ul>
+
+            <p>
+              <a class="btn" href="projects.html">View Projects</a>
+              <a class="btn ghost" href="about.html">More about me</a>
+            </p>
+          </div>
+
+          <!-- right -->
+          <aside class="hero-right">
+            <div class="card summary-card fade-up" style="text-align: left">
+              <!-- square dummy image (replace src later) -->
+              <div style="display: flex; gap: 12px; align-items: center">
+                <img
+                  alt="profile"
+                  width="96"
+                  height="96"
+                  style="
+                    object-fit: cover;
+                    border-radius: 6px;
+                    border: 1px solid #eef3fb;
+                  "
+                  src=" C:\Resume\Portfolio\Ram.jpg" width="420" height="420"><rect width="100%" height="100%" fill="%23e9f2ff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="36" fill="%230b63d6">Photo</text></svg>'
+                />
+                <div style="flex: 1">
+                  <h3 style="margin: 0">Professional Summary</h3>
+                  <p class="muted" style="margin-top: 8px; font-size: 0.95rem">
+                    Software Development Engineer / UI Developer — responsive
+                    UIs, cross-browser compatibility, SEO optimizations, client
+                    collaboration and REST API integration.
+                  </p>
+                </div>
+              </div>
+
+              <hr
+                style="
+                  border: none;
+                  height: 1px;
+                  background: #eef6ff;
+                  margin: 14px 0;
+                  border-radius: 2px;
+                "
+              />
+
+              <div>
+                <h4 style="margin: 0 0 8px 0">Core Skills</h4>
+                <div class="skills">
+                  <span class="skill">HTML</span>
+                  <span class="skill">CSS</span>
+                  <span class="skill">JavaScript</span>
+                  <span class="skill">React.js</span>
+                  <span class="skill">Core Java</span>
+                  <span class="skill">Spring Boot</span>
+                  <span class="skill">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section style="margin-top: 28px" class="fade-up">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              gap: 12px;
+              flex-wrap: wrap;
+            "
+          >
+            <div>
+              <h2 style="margin: 0">Selected Projects</h2>
+              <p class="muted" style="margin: 6px 0 0 0">
+                A few highlights of my work
+              </p>
+            </div>
+          </div>
+
+          <div class="projects-grid">
+            <article class="project-card fade-up">
+              <h3 style="margin-top: 0">FoodOrder (Demo)</h3>
+              <p class="muted">
+                Responsive frontend for a food ordering platform with menu
+                filters, accessible checkout UI, and SEO improvements.
+              </p>
+              <p style="margin-top: 10px">
+                <a class="small-link" href="projects.html#foodorder"
+                  >Read more →</a
+                >
+              </p>
+            </article>
+
+            <article class="project-card fade-up">
+              <h3 style="margin-top: 0">Restaurant Landing</h3>
+              <p class="muted">
+                Landing page, gallery, and reservation form with mobile-first
+                layout and cross-browser compatibility.
+              </p>
+              <p style="margin-top: 10px">
+                <a class="small-link" href="projects.html#restaurant"
+                  >Read more →</a
+                >
+              </p>
+            </article>
+
+            <article class="project-card fade-up">
+              <h3 style="margin-top: 0">WoodCraft Showcase</h3>
+              <p class="muted">
+                Product showcase with API-driven content and product filtering.
+                Collaborated with backend team for REST API integration.
+              </p>
+              <p style="margin-top: 10px">
+                <a class="small-link" href="projects.html#woodcraft"
+                  >Read more →</a
+                >
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section style="margin-top: 28px">
+          <div
+            class="card"
+            style="
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              gap: 12px;
+              flex-wrap: wrap;
+            "
+          >
+            <div>
+              <h3 style="margin: 0">Want to work together?</h3>
+              <p class="muted" style="margin: 6px 0 0 0">
+                I'm available for UI/front-end roles and freelance projects.
+              </p>
+            </div>
+            <div>
+              <a class="btn" href="contact.html">Contact me</a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        © 2025 Venkata Sai Ram Chaganti — Built with ❤️ •
+        <a href="about.html">About</a> • <a href="projects.html">Projects</a>
+      </footer>
+    </div>
+
+    <script>
+      // Menu toggle (for small screens)
+      (function () {
+        const btn = document.getElementById("menuBtn");
+        const nav = document.getElementById("mainNav");
+        btn.addEventListener("click", () => {
+          if (nav.style.display === "flex") {
+            nav.style.display = "";
+          } else {
+            nav.style.display = "flex";
+            nav.style.flexDirection = "column";
+            nav.style.gap = "8px";
+            nav.style.position = "absolute";
+            nav.style.right = "28px";
+            nav.style.top = "60px";
+            nav.style.background = "#fff";
+            nav.style.padding = "10px";
+            nav.style.borderRadius = "8px";
+            nav.style.boxShadow = "0 8px 24px rgba(16,24,40,0.08)";
+          }
+        });
+      })();
+
+      // simple fade-up reveal
+      (function () {
+        const els = document.querySelectorAll(".fade-up");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("show");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.06 }
+        );
+        els.forEach((el) => io.observe(el));
+      })();
+    </script>
+  </body>
+</html>
